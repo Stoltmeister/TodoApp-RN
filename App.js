@@ -34,9 +34,10 @@ export default class App extends Component<Props> {
   }
 
   addTodo() {
-    const text = prompt("TODO text please!");
+    id++;
+    const text = `TODO number ${id}`;
     this.setState({
-      todos: [...this.state.todos, { id: id++, text: text, checked: false }]
+      todos: [...this.state.todos, { id: id, text: text, checked: false }]
     });
   }
 
