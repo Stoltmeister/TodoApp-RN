@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { Component } from "react";
 import {
   Platform,
@@ -19,7 +11,7 @@ import {
 let id = 0;
 
 const Todo = props => (
-  <View>
+  <View style={styles.container}>
     <Button onPress={props.onDelete} title="delete" />
     <Text>{props.todo.text}</Text>
   </View>
@@ -62,7 +54,7 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <View>
+      <View style={styles.appContainer}>
         <Text>Todo count: {this.state.todos.length}</Text>
         <Text>
           Unchecked todo count:{" "}
@@ -84,20 +76,12 @@ export default class App extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
+  todoContainer: {
+    flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#F5FCFF"
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
+  appContainer: {
+    paddingTop: 40
   }
 });
